@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    
+    <ul>
+        <li><a href="{% url 'myapp:modelform' %}">upload画面</a></li>
+        <li><a href="{% url 'myapp:menu' %}">さいしょのがめん</a></li>
+    </ul>
+
+
+    <p>保存済みのファイル:</p>
+    <ul>
+        {% for obj in documents %}
+        <li>
+            <a href="{{ obj.document.url }}">{{ obj.document.name }}</a>
+            <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+        </li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock content %}

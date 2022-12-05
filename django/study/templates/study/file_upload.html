@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">アップロード</button>
+  </form>
+
+  <p><a href="{% url 'myapp:index' %}">ファイル一覧</a></p>
+  <p><a href="{% url 'myapp:menu' %}">さいしょのがめん</a></p>
+{% endblock %}

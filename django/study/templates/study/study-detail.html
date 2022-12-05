@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}ブロックタグで表示{% endblock %}
+
+{% block content %}
+<a href={% url 'myapp:study' %}>menu</a>
+<a href={% url 'myapp:study-detail' 3 %}>detail</a>
+<a href={% url 'myapp:study-form' %}>form</a>
+<a href={% url 'myapp:list' %}>list</a>
+<a href={% url 'myapp:data_for_csv' %}>研究(html_for_csv)</a><br>
+    <h1>今日のラッキーナンバーはこちら→ {{random_number}}</h1>
+    <p>あなたの入力した数字は→ {{ number}} </p>
+    <p> {{random_number}} + {{number}} = {{ random_number|add:number}}</p>
+{% endblock %}

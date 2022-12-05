@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}さいしょのがめん{% endblock %}
+
+{% block content %}
+  <h1>研究でーす</h1>
+    <a href={% url 'myapp:study' %}>menu</a>
+    <a href={% url 'myapp:study-detail' 3 %}>detail</a>
+    <a>form</a>
+    <a href={% url 'myapp:list' %}>list</a>
+    <a href={% url 'myapp:data_for_csv' %}>研究(html_for_csv)</a>
+    <a href={% url 'myapp:modelform' %}>研究(file_upload)</a>
+    <a href={% url 'myapp:csv_index' %}>研究(csv_open_index)</a>
+
+    <img src="{% url 'diary:plot' %}" width=600 height=600>
+{% endblock %}

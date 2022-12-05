@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}日報アプリ一覧{% endblock %}
+
+{% block content %}
+<a href={% url 'myapp:study' %}>menu</a>
+<a href={% url 'myapp:study-detail' 3 %}>detail</a>
+<a href={% url 'myapp:study-form' %}>form</a>
+<a href={% url 'myapp:list' %}>list</a>
+<a href={% url 'myapp:data_for_csv' %}>研究(html_for_csv)</a><br>
+<div>
+    <ul>
+      {% for obj in object_list %}
+        <li>{{ obj.title }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

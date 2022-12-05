@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}ふぉーむ{% endblock %}
+
+{% block content %}
+<a href={% url 'myapp:study' %}>menu</a>
+<a href={% url 'myapp:study-detail' 3 %}>detail</a>
+<a href={% url 'myapp:study-form' %}>form</a>
+<a href={% url 'myapp:list' %}>list</a>
+<a href={% url 'myapp:data_for_csv' %}>研究(html_for_csv)</a><br>
+<h1>値を入力</h1>
+  <form method="POST">{% csrf_token %}
+    <div>
+    <input name="title" type="text" placeholder="たいとる"/>
+    </div>
+    <div>
+    <input type="text" name="content" placeholder="ないよう"/>
+    </div>
+    <button type="submit">送信</button>
+  </form>
+
+  <form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">送信</button>
+  </form>
+{% endblock %}
